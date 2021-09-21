@@ -33,17 +33,28 @@ merEfternamn = inputNamn(6, lang)
 
 
 def HuvudMeny():
-    print("*** HUVUDMENY *** ")
-    print("1. Skapa")
-    print("2. Login")
-    print("3. Avsluta")
+    a = 12345
+    while True:
+        print("*** HUVUDMENY *** ")
+        print("1. Skapa")
+        print("2. Login")
+        print("3. Avsluta")
+        sel = GetSelection(1,3)  
+        if sel == 3:
+            break
+        if sel == 2:
+            KontoMeny()
 
 def KontoMeny():
+    b = 1234
     print("*** KONTOMENY *** ")
     print("1. Ta ut")
     print("2. Saldo")
     print("3. Insätt")
-    print("4. Avsluta")
+    print("4. Back to huvudmeny")
+    sel = GetSelection(1,4)
+    if sel == 4:
+        return
 
 
 def GetSelection(min, max):
@@ -53,10 +64,5 @@ def GetSelection(min, max):
             return sel
         
 
-while True:
-    HuvudMeny()
-    sel = GetSelection(1,3)  
-    #if .... 
-    KontoMeny()  
-    sel = GetSelection(1,4)
+HuvudMeny()
 
